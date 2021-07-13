@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Invoices</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Total Value</th>
+        <th>Date</th>
+    </tr>
+    {% for invoice in invoices %}
+        <tr>
+            {% for column in invoice %}
+                <td>{{ column }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+{% endblock %}
